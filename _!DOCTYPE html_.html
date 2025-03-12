@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Converse All Star</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1E5C8D;
+            color: white;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 4px solid red;
+            position: relative;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .stars {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    
+        
+        <h1>Descubre tu Converse All Star</h1>
+        <div class="stars">⭐⭐⭐</div>
+        <div class="question">
+            <p>¿Cuál es tu oficio?</p>
+            <select id="career">
+                <option value="doctor">Doctor</option>
+                <option value="artista">Artista</option>
+                <option value="músico">Músico</option>
+                <option value="emprendedor">Emprendedor</option>
+                <option value="ingeniero">Ingeniero</option>
+                <option value="chef">Chef</option>
+                <option value="deportista">Deportista</option>
+                <option value="programador">Programador</option>
+                <option value="fotógrafo">Fotógrafo</option>
+                <option value="escritor">Escritor</option>
+                <option value="actor">Actor</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>¿Cómo te describirías?</p>
+            <select id="personality">
+                <option value="elegante">Elegante</option>
+                <option value="creativo">Creativo</option>
+                <option value="atrevido">Atrevido</option>
+                <option value="clásico">Clásico</option>
+                <option value="minimalista">Minimalista</option>
+                <option value="extravagante">Extravagante</option>
+                <option value="soñador">Soñador</option>
+                <option value="energético">Energético</option>
+                <option value="analítico">Analítico</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>¿Qué superpoder tendrías?</p>
+            <select id="superpower">
+                <option value="vuelo">Volar</option>
+                <option value="invisibilidad">Invisibilidad</option>
+                <option value="velocidad">Super velocidad</option>
+                <option value="telepatía">Leer mentes</option>
+                <option value="fuerza">Fuerza sobrehumana</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>Si fueras un animal, ¿cuál serías?</p>
+            <select id="animal">
+                <option value="águila">Águila</option>
+                <option value="lobo">Lobo</option>
+                <option value="gato">Gato</option>
+                <option value="tigre">Tigre</option>
+                <option value="delfín">Delfín</option>
+            </select>
+        </div>
+
+        <div class="question">
+            <p>¿Qué canción resumiría tu personalidad?</p>
+            <input type="text" id="song" placeholder="Escribe el título de una canción">
+        </div>
+
+        <div class="question">
+            <p>¿Qué color de zapatos prefieres?</p>
+            <select id="color">
+                <option value="blanco">Blanco</option>
+                <option value="negro">Negro</option>
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="multicolor">Multicolor</option>
+            </select>
+        </div>
+
+        <button onclick="getResult()">Descubrir mi Converse</button>
+
+        <p class="result" id="result"></p>
+    </div>
+
+    <script>
+        function getResult() {
+            let career = document.getElementById("career").value;
+            let personality = document.getElementById("personality").value;
+            let color = document.getElementById("color").value;
+            let resultText = "";
+
+            if (career === "doctor" && personality === "elegante" && color === "blanco") {
+                resultText = "Tus Converse perfectas son las Blancas de Cuero, sofisticadas y cómodas.";
+            } else if (career === "artista" && personality === "creativo" && color === "multicolor") {
+                resultText = "Tus Converse perfectas son las Edición Especial con estampados únicos.";
+            } else if (career === "músico" && personality === "atrevido" && color === "negro") {
+                resultText = "Tus Converse perfectas son las Negras Clásicas, versátiles y rebeldes.";
+            } else if (career === "deportista" && personality === "clásico" && color === "rojo") {
+                resultText = "Tus Converse perfectas son las Rojas de lona, llenas de energía.";
+            } else if (career === "programador" && personality === "minimalista" && color === "negro") {
+                resultText = "Tus Converse perfectas son las Negras Minimalistas, simples pero impactantes.";
+            } else {
+                resultText = "Tus Converse perfectas son las All Star clásicas, para un estilo atemporal.";
+            }
+
+            document.getElementById("result").innerText = resultText;
+        }
+    </script>
+</body>
+</html>
